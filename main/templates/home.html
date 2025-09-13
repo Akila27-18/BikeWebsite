@@ -1,0 +1,337 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<style>
+    .inverted-trapezium {
+      clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+        background: linear-gradient(to right, #ec4899, #8b5cf6, #7c3aed);
+    }
+  
+</style>
+
+{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="text-center p-10 md:flex md:items-center md:justify-around md:px-20">
+    <div class="md:w-1/2 space-y-6">
+        <h2 class="text-2xl font-semibold primary-text">Buy or Sell Bikes the Smarter Way</h2>
+        <p class="text-black">Skip the hassle. Discover verified secondhand bikes <br>at great prices or list your
+            own in minutes. <br>We’re here to help you ride more, spend less, <br>and keep bikes moving — from one happy
+            rider to the next.</p>
+        <button class="primary-color text-white px-6 py-3 rounded">Buy Now</button>
+    </div>
+ 
+   
+   
+   <div class="md:w-1/2 flex justify-center mt-8 md:mt-0 p-6 bg-gradient-to-r from-pink-500 via-purple-500 to-purple-700 rounded-lg inverted-trapezium ">
+
+    <img id="bikeImage" src="{% static 'images/bike-png-image-pngfre-42-1024x704.png' %}" alt="Bike"
+         class="rounded-xl shadow-lg w-full max-w-lg h-auto object-cover">
+
+</div>
+
+
+
+</section>
+
+<!-- Info Section -->
+<section class="p-10 md:flex md:items-center md:justify-around md:px-20 bg-white">
+    <div class="md:w-1/2">
+      <img src="{% static 'images/image 74.png' %}" alt="Rider on Scooter"
+     class="mx-auto max-w-full h-auto rounded-lg shadow-lg">
+
+    </div>
+    <div class="md:w-1/2 space-y-6 mt-8 md:mt-0">
+        <p class="text-gray-700">Buying and selling secondhand bikes isn’t just a smart financial decision —<br> it’s a
+            sustainable one. When you buy a pre-owned bike, you save money<br> while gaining access to a wider variety of
+            models, often already assembled <br>and ready to ride. It's an eco-friendly choice that helps reduce
+            manufacturing <br>waste and supports a circular economy. On the other hand, selling your bike <br>allows you to
+            earn extra cash, declutter your space, and pass on a reliable <br>ride to someone new.</p>
+        <button class="primary-color text-white px-6 py-3 rounded">Read More</button>
+    </div>
+</section>
+<!-- Support Section with Arrows -->
+<section class="text-center px-6 py-12">
+  <h2 class="text-2xl md:text-3xl font-semibold text-[#07435C] mb-12">
+    Get the Support You Need
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Block 1 -->
+    <div class="flex flex-col items-center text-center max-w-xs mx-auto relative">
+      <svg class="w-40 h-56 text-[#0d8ecf]" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="10">
+        <path d="M10 290 V60 Q100 -20 190 60 V290" stroke-linecap="round" />
+        <path d="M190 60 L170 80 M190 60 L210 80" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="absolute top-20">
+        <img src="{% static 'images/mkhan08523f_1738502667_726.jpg' %}"
+             alt="24/7 Support"
+             class="w-30 h-30 rounded-full border-4 border-white shadow-md">
+      </div>
+      <h3 class="text-[#07435C] font-semibold text-lg mt-32">24/7 Support</h3>
+      <p class="text-sm mt-2">
+        Our support team is available 24/7<br>
+        to assist you. Fast, friendly,<br>
+        reliable help is just a message away.
+      </p>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="flex flex-col items-center text-center max-w-xs mx-auto relative">
+      <svg class="w-40 h-56 text-[#0d8ecf]" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="10">
+        <path d="M10 290 V60 Q100 -20 190 60 V290" stroke-linecap="round" />
+        <path d="M190 60 L170 80 M190 60 L210 80" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="absolute top-20">
+        <img src="{% static 'images/image 75.png' %}"
+             alt="Social Media"
+             class="w-30 h-30 rounded-full border-4 border-white shadow-md">
+      </div>
+      <h3 class="text-[#07435C] font-semibold text-lg mt-32">Social Media</h3>
+      <p class="text-sm mt-2">
+        Whether you're buying, selling,<br>
+        or just love bikes — there’s a<br>
+        place for you in our community.
+      </p>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="flex flex-col items-center text-center max-w-xs mx-auto relative">
+      <svg class="w-40 h-56 text-[#0d8ecf]" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="10">
+        <path d="M10 290 V60 Q100 -20 190 60 V290" stroke-linecap="round" />
+        <path d="M190 60 L170 80 M190 60 L210 80" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="absolute top-20">
+        <img src="{% static 'images/illustration-graphic-cartoon-character-of-blog-vector.jpg' %}"
+             alt="Blogs"
+             class="w-30 h-30 rounded-full border-4 border-white shadow-md">
+      </div>
+      <h3 class="text-[#07435C] font-semibold text-lg mt-32">Blogs</h3>
+      <p class="text-sm mt-2">
+        From guides on buying & selling<br>
+        secondhand bikes, cycling safety,<br>
+        and eco-friendly living, we cover it all.
+      </p>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="flex flex-col items-center text-center max-w-xs mx-auto relative">
+      <svg class="w-40 h-56 text-[#0d8ecf]" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="10">
+        <path d="M10 290 V60 Q100 -20 190 60 V290" stroke-linecap="round" />
+        <path d="M190 60 L170 80 M190 60 L210 80" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="absolute top-20">
+        <img src="{% static 'images/two-smartphones-transferring-money-to-each-other-free-vector.jpg' %}"
+             alt="Money Security"
+             class="w-30 h-30 rounded-full border-4 border-white shadow-md">
+      </div>
+      <h3 class="text-[#07435C] font-semibold text-lg mt-32">100% Money Security</h3>
+      <p class="text-sm mt-2">
+        No scams, no surprises —<br>
+        just a smooth, trustworthy<br>
+        experience every time.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="text-center p-10">
+  <h2 class="text-3xl font-semibold text-[#07435C] mb-8">Our Few Bikes</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {% for bike in bikes %}
+    <div class="rounded-lg shadow-lg overflow-hidden">
+
+      <!-- Image -->
+      <img src="{{ bike.image.url }}" alt="{{ bike.brand }} {{ bike.model }}"
+           class="w-full h-54 object-cover">
+
+      <!-- Text block -->
+      <div class="p-4 bg-gradient-to-r from-teal-100 to-teal-300">
+        <h3 class="text-lg font-bold text-[#07435C]">
+          {{ bike.year }} | {{ bike.brand }} {{ bike.model }} | {{ bike.engine_cc }}CC
+        </h3>
+
+        <p class="text-gray-700 mt-2">
+          🏁 {{ bike.kilometers }} Km · ⛽ {{ bike.fuel_type }} · {{ bike.owner_type }}
+        </p>
+
+        <p class="text-xl font-semibold text-[#07435C] mt-2">
+          ₹ {{ bike.price|floatformat:2 }}
+        </p>
+
+        <p class="text-gray-600 mt-1">
+          📍 {{ bike.location }}
+        </p>
+      </div>
+    </div>
+    {% empty %}
+    <p class="col-span-3 text-gray-500">No bikes available at the moment.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="bg-gradient-to-r from-teal-800 to-teal-500 text-white py-8 px-6 rounded-lg shadow-lg mb-12">
+  
+  <!-- Header Row (Title + Logo) -->
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="font-semibold text-xl">
+      Over 15000+ Satisfied Customers
+    </h2>
+    <img src="{% static 'images/logo.png' %}" alt="DriveRP Logo" class="h-20 w-48">
+  </div>
+
+  <!-- Stats Section -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Stat 1 -->
+    <div class="flex items-center space-x-4">
+      <img src="{% static 'images/Screenshot 2025-09-10 154148.png' %}" alt="Bike Icon" class="w-16 h-16">
+      <div>
+        <div class="text-2xl font-bold">5000+</div>
+        <div class="text-sm">Bike Purchased</div>
+      </div>
+    </div>
+
+    <!-- Stat 2 -->
+    <div class="flex items-center space-x-4">
+      <img src="{% static 'images/Screenshot 2025-09-10 154203.png' %}" alt="Rating Icon" class="w-16 h-16">
+      <div>
+        <div class="text-2xl font-bold">4.5</div>
+        <div class="text-sm">Average Rating</div>
+      </div>
+    </div>
+
+    <!-- Stat 3 -->
+    <div class="flex items-center space-x-4">
+      <img src="{% static 'images/Screenshot 2025-09-10 154155.png' %}" alt="Experience Icon" class="w-16 h-16">
+      <div>
+        <div class="text-2xl font-bold">25+</div>
+        <div class="text-sm">Years Experience</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Customer Testimonials -->
+<section class="max-w-6xl mx-auto px-6 mb-12">
+    <h2 class="text-2xl font-bold text-center mb-2">Real Stories From Our Happy Customers</h2>
+    <p class="text-center text-teal-700 mb-8">Their words drive us forward and inspire others to join the movement.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden" style="box-shadow: 0 4px 10px 10px  rgba(13, 148, 136, 0.5);">
+    <img src="{% static 'images/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg' %}" alt="Sarah M." class="w-full h-48 object-cover">
+    <div class="p-6 text-center">
+        <h3 class="font-semibold text-lg mb-2">Sarah M. – First-Time Buyer</h3>
+        <p class="text-gray-700 text-sm">
+            “I was nervous about buying a secondhand bike online, but the whole process was smooth and secure. The bike was exactly as described, and the support team was super helpful. I saved money and found a great ride!”
+        </p>
+    </div>
+</div>
+
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="box-shadow: 0 4px 10px 10px  rgba(13, 148, 136, 0.5);">
+            <img src="{% static 'images/istockphoto-1392583255-612x612.jpg' %}" alt="James R." class="w-full h-48 object-cover">
+            <div class="p-6 text-center">
+                <h3 class="font-semibold text-lg mb-2">James R. – Seller</h3>
+                <p class="text-gray-700 text-sm">
+                    “I had an old mountain bike collecting dust. Listing it took minutes, and it sold within a few days. The payment process was safe and fast — I’ll definitely be using this platform again.”
+                </p>
+            </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="box-shadow: 0 4px 10px 10px  rgba(13, 148, 136, 0.5);">
+            <img src="{% static 'images/Screenshot 2025-09-10 160017.png' %}" alt="Priya K." class="w-full h-48 object-cover">
+            <div class="p-6 text-center">
+                <h3 class="font-semibold text-lg mb-2">Priya K. – Daily Commuter</h3>
+                <p class="text-gray-700 text-sm">
+                    “This site makes secondhand feel first-class. I found a quality commuter bike that fits my lifestyle and budget. Plus, it feels good to buy sustainably.”
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Trusted by Riders -->
+<section class="bg-[#07435C] text-white py-12 px-6 rounded-lg mb-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6">
+        <div class="md:w-1/2">
+            <h3 class="text-xl font-bold mb-2">Trusted by Riders Like You</h3>
+            <p class="text-gray-200">
+                From smooth sales to great secondhand finds, our community loves the ease, security, and savings we offer. Real riders share real stories — and they keep coming back for more.
+            </p>
+        </div>
+        <div class="md:w-1/2">
+            <img src="{% static 'images/image 80.png' %}" alt="Rider on bike" class="rounded-lg box-shadow w-full" style="box-shadow: 0 4px 10px 10px #fff;">
+        </div>
+    </div>
+</section>
+<section class="max-w-4xl mx-auto my-12 p-6 bg-cyan-100 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+
+    <div class="space-y-4">
+        <div class="bg-white p-4 rounded shadow-md">
+            <strong>1. What happens if a transaction goes wrong?</strong>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow-md">
+            <strong>2. Are there any restrictions on what I can sell?</strong>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow-md">
+            <strong>3. What if the bike I buy isn’t as described?</strong>
+            <!-- <p class="mt-2 text-gray-600">
+                We offer buyer protection and dispute resolution to ensure fair outcomes and peace of mind.
+            </p> -->
+        </div>
+
+        <div class="bg-white p-4 rounded shadow-md">
+            <strong>4. How do I know if a bike is in good condition?</strong>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow-md">
+            <strong>5. Can I delete my listing after posting?</strong>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow-md">
+            <strong>6. Can I sell bike parts or accessories?</strong>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
+ {% block extra_js %}
+   
+<script>
+    const images = [
+        "{% static 'images/bike-png-image-pngfre-42-1024x704.png' %}",
+        "{% static 'images/png-clipart-car-hero-honda-splendor-hero-motocorp-hero-super-splendor-motorcycle-hero-karizma-zmr-bicycle-car-thumbnail-removebg-preview.png' %}",
+       
+        "{% static 'images/image 88 (1).png' %}"
+    ];
+
+    let currentIndex = 0;
+    const bikeImage = document.getElementById('bikeImage');
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        bikeImage.src = images[currentIndex];
+    }, 4000);
+</script>
+     {% endblock %}

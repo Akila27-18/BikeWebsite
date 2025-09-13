@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<style>
+   /* Styles for the modal popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+  
+</style>
+
+{% endblock %}
+  {% block content %}
+  <div class="container mx-auto p-4 md:p-8">
+        <div class="bg-white rounded-lg shadow-md p-6 max-w-lg mx-auto">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Payment Details</h1>
+            <p class="text-center text-lg text-gray-600 mb-4">You are about to buy the **{{ bike.brand }} {{ bike.model }}**</p>
+            
+            <form id="paymentForm" action="{% url 'confirm_payment' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="bike_id" value="{{ bike.id }}">
+                
+                <div class="mb-4">
+                    <label for="cardNumber" class="block text-gray-700 font-semibold mb-2">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label for="expiry" class="block text-gray-700 font-semibold mb-2">Expiry Date</label>
+                        <input type="text" id="expiry" name="expiry" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="MM/YY" required>
+                    </div>
+                    <div>
+                        <label for="cvv" class="block text-gray-700 font-semibold mb-2">CVV</label>
+                        <input type="text" id="cvv" name="cvv" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="XXX" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="confirmPaymentBtn" class="w-full bg-teal-700 text-white font-bold py-3 px-6 rounded-md shadow-lg hover:bg-teal-800 transition-colors">
+                    Confirm Payment
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="payment-success-modal" class="modal">
+    <div class="modal-content text-center">
+        <!-- Success Image -->
+        <img src="{% static 'images/bike-biker.gif' %}" 
+             alt="Payment Successful" 
+             class="h-16 w-16 mx-auto mb-4">
+
+        <!-- Title -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Payment Successful!</h2>
+
+        <!-- Message -->
+        <p class="text-gray-600">Your payment has been successfully processed.</p>
+
+        <!-- OK Button -->
+        <button id="close-modal-btn" 
+                class="mt-6 bg-blue-600 text-white font-bold py-2 px-6 rounded-md hover:bg-blue-700 transition-colors">
+            OK
+        </button>
+    </div>
+</div>
+
+  {% endblock %}
+   {% block extra_js %}
+   
+<script>
+   const paymentForm = document.getElementById('paymentForm');
+        const modal = document.getElementById('payment-success-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        paymentForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Simulate a successful payment and show the modal
+            // In a real application, you would send an AJAX request here
+            // to process the payment and then show the modal on success.
+
+            // Simulate API call delay
+            setTimeout(() => {
+                modal.style.display = 'flex';
+            }, 1000); // 1-second delay
+        });
+
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            // Optional: Redirect the user after the popup is closed
+            window.location.href = '{% url "bike_detail" bike.id %}';
+        });
+</script>
+     {% endblock %}
