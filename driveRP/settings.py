@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-odn0t64#%#2!6terlb-46t3-nd&urkun5dcpjgv$5pyqlsn7jo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://bikewebsite-u27x.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
